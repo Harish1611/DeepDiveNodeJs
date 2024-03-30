@@ -1,7 +1,5 @@
 const http = require('http');
-
-
-
+const url = require('url');
 
 
 /**
@@ -11,8 +9,22 @@ const http = require('http');
 
 
  const server = http.createServer((req,res) => {
+    
+    const pathName = req.url; //grabs the url end point
 
-    res.end("Sample Server Response!");  
+    if( pathName === '/' || pathName === '/overview'){
+     
+    res.end("Welcome To Overview!");  
+
+    } else if( pathName === '/product'){
+
+    res.end("This is Product");
+
+    } else{
+    
+    res.end("Page Not Found");
+    
+    }
 
 });
 
