@@ -22,8 +22,9 @@ const url = require('url');
 
     } else{
     
+    res.writeHead(404);
     res.end("Page Not Found");
-    
+
     }
 
 });
